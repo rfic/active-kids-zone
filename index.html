@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joga dla dzieci i urodziny na basenie w Krakowie | Active Kids Zone</title>
+<meta name="description" content="Joga dla dzieci, gimnastyka i nauka pływania w Krakowie. Organizujemy urodziny dla dzieci na basenie w JJ Sport Concept w Skotnikach: zabawy w wodzie, jacuzzi i sala urodzinowa.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://www.active-kids-zone.pl/">
+<meta name="theme-color" content="#6c48ba">
+<link rel="icon" type="image/webp" href="img/logo.webp">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="Active Kids Zone">
+<meta property="og:url" content="https://www.active-kids-zone.pl/">
+<meta property="og:title" content="Joga dla dzieci i urodziny na basenie w Krakowie | Active Kids Zone">
+<meta property="og:description" content="Joga dla dzieci, gimnastyka i nauka pływania w Krakowie. Urodziny dla dzieci na basenie z animacjami, jacuzzi i salą urodzinową.">
+<meta property="og:image" content="https://www.active-kids-zone.pl/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dzieci bawią się w basenie podczas urodzin">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SportsOrganization",
+      "@id": "https://www.active-kids-zone.pl/#organizacja",
+      "name": "Active Kids Zone",
+      "url": "https://www.active-kids-zone.pl/",
+      "logo": "https://www.active-kids-zone.pl/img/logo.webp",
+      "image": "https://www.active-kids-zone.pl/img/og-image.jpg",
+      "description": "Joga dla dzieci, gimnastyka, nauka pływania oraz urodziny dla dzieci na basenie w Krakowie.",
+      "telephone": "+48724504774",
+      "areaServed": { "@type": "City", "name": "Kraków" },
+      "sameAs": [
+        "https://www.facebook.com/ActiveKidsZoneKrakow",
+        "https://www.instagram.com/active.kids.zone_krakow/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.active-kids-zone.pl/#strona",
+      "url": "https://www.active-kids-zone.pl/",
+      "name": "Active Kids Zone",
+      "inLanguage": "pl-PL",
+      "publisher": { "@id": "https://www.active-kids-zone.pl/#organizacja" }
+    },
+    {
+      "@type": "Service",
+      "name": "Joga dla dzieci",
+      "serviceType": "Zajęcia jogi dla dzieci",
+      "provider": { "@id": "https://www.active-kids-zone.pl/#organizacja" },
+      "areaServed": { "@type": "City", "name": "Kraków" },
+      "description": "Zajęcia jogi dla dzieci pełne ruchu, zabawy i wyobraźni: pozycje zwierząt, ćwiczenia oddechowe, równowaga, koncentracja i relaks."
+    },
+    {
+      "@type": "Service",
+      "name": "Urodziny na basenie",
+      "serviceType": "Urodziny dla dzieci",
+      "provider": { "@id": "https://www.active-kids-zone.pl/#organizacja" },
+      "areaServed": { "@type": "City", "name": "Kraków" },
+      "description": "Urodziny dla dzieci na basenie w Krakowie: 60 minut zabaw i animacji wodnych z instruktorami, jacuzzi i 60 minut w sali urodzinowej. Całość około 2,5 godziny.",
+      "location": {
+        "@type": "Place",
+        "name": "JJ Sport Concept",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ul. Winnicka 40",
+          "addressLocality": "Kraków",
+          "addressCountry": "PL"
+        }
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF8EE; --ink:#08080a;
+  --main:#6c48ba;            /* kolor główny */
+  --main-soft:#E9E1FA;
+  --sun:#F2B83F; --sky:#3E9CC0; --red:#E8604C; --mint:#8ED8B8; --pink:#FFC2D4;
+  --radius:28px;
+  --display:"Baloo 2", system-ui, sans-serif;
+  --body:"DM Sans", system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{font-family:var(--body);background:var(--cream);color:var(--ink);overflow-x:hidden;line-height:1.55}
+img,svg{display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--main);color:#fff}
+
+/* ---------- LOADER ---------- */
+.loader{position:fixed;inset:0;z-index:100;background:var(--main);display:grid;place-items:center;clip-path:inset(0 0 0 0)}
+.loader-word{display:flex;flex-wrap:wrap;justify-content:center;font-family:var(--display);font-weight:700;font-size:clamp(40px,8vw,130px);color:var(--cream);letter-spacing:-.01em;overflow:hidden;line-height:1.05;padding:0 5vw}
+.loader-word span{display:inline-block;transform:translateY(110%)}
+.loader-count{position:absolute;bottom:32px;right:40px;font-family:var(--display);font-weight:600;font-size:22px;color:var(--cream)}
+
+/* ---------- CURSOR / PROGRESS ---------- */
+.cursor{position:fixed;top:0;left:0;width:14px;height:14px;border-radius:50%;background:var(--main);pointer-events:none;z-index:90;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s,opacity .25s;opacity:.85}
+.cursor.big{width:64px;height:64px;background:var(--sun);opacity:.55}
+@media (hover:none){.cursor{display:none}}
+.progress{position:fixed;top:0;left:0;height:4px;width:100%;background:var(--main);transform-origin:0 50%;transform:scaleX(0);z-index:60}
+
+/* ---------- NAV ---------- */
+.nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:50;display:flex;align-items:center;gap:28px;padding:8px 8px 8px 18px;background:rgba(255,248,238,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(36,25,63,.08);border-radius:999px;transition:transform .5s cubic-bezier(.7,0,.2,1);width:max-content;max-width:calc(100% - 24px)}
+.nav.hide{transform:translate(-50%,-140%)}
+.logo img{height:44px;width:auto}
+.nav-links{display:flex;gap:22px;font-weight:500;font-size:15px}
+.nav-links a{position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:100%;background:var(--main);transform:scaleX(0);transform-origin:right;transition:transform .35s}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;background:var(--main);color:#fff;font-weight:700;font-size:15px;position:relative;overflow:hidden;isolation:isolate;will-change:transform}
+.btn::before{content:"";position:absolute;inset:0;background:var(--ink);border-radius:inherit;transform:translateY(101%);transition:transform .45s cubic-bezier(.7,0,.2,1);z-index:-1}
+.btn:hover::before{transform:translateY(0)}
+.btn.small{padding:11px 18px}
+.btn svg{width:20px;height:20px;flex:none}
+.btn.wa{background:#25D366;color:#fff}
+.btn.fb{background:#1877F2;color:#fff}
+.btn.ig{background:#E1306C;color:#fff}
+.btn.light{background:var(--cream);color:var(--ink)}
+.btn.light::before{background:var(--sun)}
+.contact-row{display:flex;gap:12px;flex-wrap:wrap}
+@media (max-width:820px){.nav-links{display:none}}
+
+/* floating WhatsApp */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:55;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(37,211,102,.7);transform:scale(0)}
+.wa-float svg{width:30px;height:30px}
+.wa-float::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:ring 2.2s infinite}
+@keyframes ring{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.6);opacity:0}}
+
+/* ---------- SPLIT TEXT ---------- */
+.word{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em}
+.word-inner{display:inline-block;will-change:transform}
+
+/* ---------- HERO ---------- */
+.hero{min-height:100vh;padding:140px 5vw 80px;position:relative;display:grid;grid-template-columns:1fr 1.05fr;align-items:center;gap:48px;}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,4.9vw,80px);line-height:1;letter-spacing:-.02em}
+.hero h1 .hl{color:var(--main)}
+.hero h1 .sub{display:block;margin-top:.3em;font-size:.62em;line-height:1.08}
+.hero p.lead{font-size:clamp(17px,1.35vw,20px);max-width:500px;margin:28px 0 36px;color:#4d4466}
+.collage{position:relative;height:660px}
+.photo{position:absolute;border-radius:32px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(36,25,63,.45);will-change:transform;background:var(--main-soft)}
+.photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.15);will-change:transform}
+.ph1{width:78%;aspect-ratio:4/3;left:4%;top:40px;z-index:2;border:8px solid #fff}
+.ph2{width:38%;aspect-ratio:3/4;right:0;top:300px;z-index:3;rotate:6deg;border:8px solid #fff}
+.ph3{width:34%;aspect-ratio:3/4;left:0;top:360px;z-index:2;rotate:-7deg;border:8px solid #fff}
+.badge-float{position:absolute;z-index:4;background:#fff;border-radius:20px;padding:12px 16px;font-weight:700;font-size:14px;display:flex;align-items:center;gap:10px;box-shadow:0 20px 40px -18px rgba(36,25,63,.4);will-change:transform}
+.badge-float i{width:12px;height:12px;border-radius:50%;flex:none}
+.bf1{left:58%;top:0}
+.bf2{left:30%;bottom:20px}
+.shape{position:absolute;will-change:transform;pointer-events:none}
+.blob{border-radius:50%}
+.hero .s1{width:110px;height:110px;background:var(--sun);top:16%;left:40%}
+.hero .s2{width:60px;height:60px;background:var(--sky);bottom:8%;left:44%}
+.hero-copy{position:relative;z-index:2}
+.hero .s3{width:220px;height:220px;background:var(--main-soft);top:-70px;right:-50px}
+.hero .s4{bottom:10%;right:48%}
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr;padding-top:120px}
+  .collage{height:560px;max-width:620px;width:100%;margin:0 auto}
+}
+@media (max-width:560px){.hero .s1{left:auto;right:-30px;top:52%;width:80px;height:80px}.collage{height:420px}.ph2{top:220px}.ph3{top:260px}.badge-float{font-size:12px;padding:9px 12px}}
+
+/* ---------- BIG QUOTE ---------- */
+.statement{position:relative;padding:20vh 5vw;overflow:hidden}
+.statement h2{font-family:var(--display);font-weight:700;font-size:clamp(42px,7.4vw,128px);line-height:1;letter-spacing:-.02em;max-width:1300px;margin:0 auto;text-align:center;position:relative;z-index:2}
+.statement h2 .w{opacity:.12}
+.statement .welcome{display:block;text-align:center;font-family:var(--display);font-weight:600;font-size:clamp(20px,2.2vw,32px);margin-top:40px;color:var(--main);position:relative;z-index:2}
+.sticker{position:absolute;z-index:3;width:clamp(90px,10vw,150px);aspect-ratio:1;border-radius:32px;display:grid;place-items:center;color:var(--main);box-shadow:0 20px 40px -20px rgba(36,25,63,.35);will-change:transform}
+.st1{background:#CFE9F4;top:10%;left:6%;rotate:-12deg}
+.st2{background:#FCE6B5;top:14%;right:8%;rotate:10deg}
+.st3{background:var(--mint);bottom:10%;left:12%;rotate:8deg}
+.st4{background:var(--pink);bottom:14%;right:10%;rotate:-6deg}
+.sticker svg{width:52%;height:52%}
+@media (max-width:760px){.sticker{width:66px;border-radius:20px}}
+
+/* ---------- ABOUT / HORIZONTAL ---------- */
+.horiz{position:relative;background:var(--main);color:#fff;overflow:hidden}
+.horiz-inner{height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 0 0 5vw}
+.horiz-head{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;padding-right:5vw;margin-bottom:44px}
+.horiz-head h2{font-family:var(--display);font-weight:700;font-size:clamp(36px,4.8vw,76px);letter-spacing:-.02em;line-height:1}
+.horiz-head h2 em{font-style:normal;color:var(--sun)}
+.horiz-head p{max-width:440px;font-size:16px;opacity:.9}
+.track{display:flex;gap:26px;width:max-content;padding-right:5vw;will-change:transform;align-items:center}
+.fcard{width:min(380px,78vw);height:min(470px,58vh);border-radius:var(--radius);padding:28px;color:var(--ink);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;flex:none}
+.fcard .num{font-family:var(--display);font-weight:700;font-size:16px;opacity:.55}
+.fcard .emo{width:86px;height:86px;position:absolute;right:26px;top:26px;color:var(--main);will-change:transform}
+.fcard .emo svg{width:100%;height:100%}
+.fcard h4{font-family:var(--display);font-weight:700;font-size:clamp(28px,2.4vw,36px);line-height:1.02;letter-spacing:-.01em}
+.fcard p{font-size:15px;margin-top:10px;max-width:300px}
+.pcard{width:min(360px,74vw);height:min(500px,62vh);border-radius:var(--radius);overflow:hidden;flex:none;position:relative;border:6px solid rgba(255,255,255,.18)}
+.pcard img{width:120%;height:100%;object-fit:cover;will-change:transform}
+@media (max-width:760px){
+  .horiz-inner{height:auto;padding:100px 5vw}
+  .horiz-head{flex-direction:column;align-items:flex-start;padding:0}
+  .track{flex-direction:column;width:100%;padding:0}
+  .fcard,.pcard{width:100%;height:380px}
+  .pcard img{width:100%}
+}
+
+/* ---------- FOR WHOM (circle reveal) ---------- */
+.mission{position:relative;min-height:110vh;display:grid;place-items:center;overflow:hidden;padding:15vh 5vw}
+.mission-bg{position:absolute;inset:0;background:var(--sun);clip-path:circle(0% at 50% 50%)}
+.mission-content{position:relative;text-align:center;max-width:1050px}
+.kicker{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;margin-bottom:20px}
+.mission h2{font-family:var(--display);font-weight:700;font-size:clamp(38px,5.4vw,90px);letter-spacing:-.02em;line-height:1}
+.mission p{font-size:clamp(17px,1.5vw,21px);max-width:600px;margin:30px auto 0}
+
+/* ---------- MARQUEE ---------- */
+.marquee{padding:12vh 0;overflow:hidden}
+.mq-row{display:flex;gap:18px;width:max-content;margin-bottom:18px;will-change:transform}
+.tile{display:flex;align-items:center;gap:14px;padding:14px 26px 14px 14px;border-radius:24px;background:#fff;border:1px solid rgba(36,25,63,.08);flex:none}
+.tile .emo{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;color:var(--main)}
+.tile .emo svg{width:28px;height:28px}
+.tile b{font-family:var(--display);font-weight:600;font-size:23px;white-space:nowrap}
+
+/* ---------- STORY ---------- */
+.story{padding:12vh 5vw;display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:center}
+.story-visual{position:relative;aspect-ratio:4/5;max-height:740px}
+.layer{position:absolute;border-radius:var(--radius);will-change:transform;overflow:hidden}
+.layer img,.layer video{width:100%;height:100%;object-fit:cover;display:block}
+.l1{inset:0 16% 10% 0;box-shadow:0 40px 80px -30px rgba(36,25,63,.4)}
+.l2{width:44%;aspect-ratio:1;right:0;bottom:0;border-radius:50%;border:8px solid var(--cream)}
+.l3{width:26%;aspect-ratio:1;right:6%;top:4%;background:var(--sun);border-radius:24px;rotate:12deg;display:grid;place-items:center;color:#fff}
+.l3 svg{width:55%;height:55%}
+.story .kicker{color:var(--main)}
+.story h2{font-family:var(--display);font-weight:700;font-size:clamp(38px,4.4vw,74px);letter-spacing:-.02em;line-height:1;margin-bottom:28px}
+.story p{font-size:18px;color:#4d4466;margin-bottom:18px;max-width:540px}
+.story blockquote{font-family:var(--display);font-weight:600;font-size:clamp(22px,2vw,28px);color:var(--main);border-left:4px solid var(--sun);padding-left:18px;margin:26px 0 0;max-width:520px;line-height:1.25}
+@media (max-width:900px){.story{grid-template-columns:1fr}.story-visual{max-width:480px}}
+
+/* ---------- VALUES ---------- */
+.values{padding:4vh 5vw 12vh;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.value{border-radius:var(--radius);padding:34px 30px;min-height:270px;display:flex;flex-direction:column;justify-content:space-between}
+.value .big{font-family:var(--display);font-weight:700;font-size:clamp(34px,3.2vw,52px);line-height:1;letter-spacing:-.01em}
+.value .ico{width:50px;height:50px;color:var(--ink)}
+.value .ico svg{width:100%;height:100%}
+.value p{font-weight:500;font-size:16px;max-width:280px;margin-top:10px}
+@media (max-width:900px){.values{grid-template-columns:1fr}}
+
+
+/* ---------- PARTY TIMELINE ---------- */
+.party{padding:12vh 5vw}
+.party-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:6vw;align-items:start}
+.party-side{position:sticky;top:110px}
+.party-side .kicker{color:var(--main)}
+.party-side h2{font-family:var(--display);font-weight:700;font-size:clamp(38px,4.4vw,74px);letter-spacing:-.02em;line-height:1;margin-bottom:22px}
+.party-side>p{font-size:18px;color:#4d4466;max-width:440px}
+.party-time{display:flex;align-items:center;gap:16px;margin:28px 0}
+.party-time .n{font-family:var(--display);font-weight:700;font-size:clamp(64px,6vw,96px);line-height:1;color:var(--main)}
+.party-time span:last-child{font-weight:700;line-height:1.25}
+.party-photo{border-radius:var(--radius);overflow:hidden;height:34vh;min-height:220px}
+.party-photo img{width:100%;height:125%;object-fit:cover;will-change:transform}
+.party-steps{position:relative}
+.pline{position:absolute;left:59px;top:50px;bottom:50px;width:3px;background:rgba(108,72,186,.15);border-radius:3px}
+.pline i{position:absolute;inset:0;background:var(--main);transform-origin:top;transform:scaleY(0);border-radius:3px}
+.pstep{position:relative;display:grid;grid-template-columns:64px 1fr;gap:24px;padding:28px;background:#fff;border:1px solid rgba(36,25,63,.08);border-radius:var(--radius);margin-bottom:18px}
+.pnum{width:64px;height:64px;border-radius:50%;background:var(--main-soft);color:var(--main);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:28px;transition:background .4s,color .4s,transform .4s cubic-bezier(.3,1.6,.5,1)}
+.pstep.active .pnum{background:var(--main);color:#fff;transform:scale(1.08)}
+.pstep h4{font-family:var(--display);font-weight:700;font-size:clamp(22px,1.8vw,28px);line-height:1.1;margin:4px 0 8px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.ptag{font-family:var(--body);font-size:13px;font-weight:700;background:var(--sun);color:var(--ink);padding:5px 11px;border-radius:999px}
+.pstep p{color:#4d4466;font-size:16px}
+.pthumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.pthumb{aspect-ratio:1;border-radius:16px;overflow:hidden}
+.pthumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.pthumb:hover img{transform:scale(1.08)}
+.party-note{margin-top:60px;background:var(--sun);border-radius:36px;padding:44px 5vw;display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:start}
+.party-note h3{font-family:var(--display);font-weight:700;font-size:clamp(32px,3.2vw,52px);line-height:1}
+.party-note ul{list-style:none;display:grid;gap:16px}
+.party-note li{display:grid;grid-template-columns:34px 1fr;gap:14px;font-size:17px;font-weight:500;align-items:start}
+.party-note li svg{width:34px;height:34px;padding:7px;border-radius:50%;background:var(--ink);color:var(--sun)}
+@media (max-width:900px){
+  .party-grid{grid-template-columns:1fr}
+  .party-side{position:static}
+  .party-note{grid-template-columns:1fr;padding:34px 24px}
+  .pstep{grid-template-columns:48px 1fr;gap:16px;padding:22px}
+  .pnum{width:48px;height:48px;font-size:22px}
+  .pline{left:45px}
+}
+
+/* ---------- WSPÓŁPRACA ---------- */
+.coop{padding:12vh 5vw}
+.coop-head{display:grid;grid-template-columns:1.1fr .9fr;gap:6vw;align-items:end;margin-bottom:48px}
+.coop .kicker{color:var(--main)}
+.coop h2{font-family:var(--display);font-weight:700;font-size:clamp(38px,4.4vw,74px);letter-spacing:-.02em;line-height:1}
+.coop-head p{font-size:18px;color:#4d4466;max-width:520px}
+.coop-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.coop-card{background:#fff;border:1px solid rgba(36,25,63,.08);border-radius:var(--radius);padding:32px 28px}
+.coop-card .ico{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;color:var(--ink);margin-bottom:22px}
+.coop-card .ico svg{width:34px;height:34px}
+.coop-card h3{font-family:var(--display);font-weight:700;font-size:clamp(24px,2vw,30px);line-height:1.1;margin-bottom:10px}
+.coop-card p{color:#4d4466;font-size:16px}
+.coop-cta{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:20px;padding:30px 32px;border-radius:var(--radius);background:var(--main);color:#fff}
+.coop-cta p{font-family:var(--display);font-weight:600;font-size:clamp(20px,1.8vw,26px);line-height:1.2;max-width:640px}
+@media (max-width:900px){.coop-head,.coop-cards{grid-template-columns:1fr}.coop-head{gap:20px}}
+
+/* ---------- GALLERY (column parallax) ---------- */
+.gallery{padding:6vh 5vw 4vh;overflow:hidden}
+.gallery-head{text-align:center;margin-bottom:60px}
+.gallery-head .kicker{color:var(--main)}
+.gallery-head h2{font-family:var(--display);font-weight:700;font-size:clamp(38px,4.8vw,78px);letter-spacing:-.02em;line-height:1}
+.g-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+.g-col{display:flex;flex-direction:column;gap:20px;will-change:transform}
+.g-col:nth-child(2){margin-top:120px}
+.g-item{border-radius:var(--radius);overflow:hidden;position:relative}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.g-item:hover img{transform:scale(1.06)}
+.g-item.tall{aspect-ratio:3/4}.g-item.wide{aspect-ratio:4/3}
+@media (max-width:760px){.g-cols{grid-template-columns:1fr 1fr}.g-col:nth-child(3){display:none}.g-col:nth-child(2){margin-top:60px}}
+
+/* ---------- CTA ---------- */
+.cta{margin:0 2vw;border-radius:48px;background:var(--main);color:#fff;padding:16vh 5vw;text-align:center;position:relative;overflow:hidden}
+.cta h2{font-family:var(--display);font-weight:700;font-size:clamp(50px,8.6vw,150px);letter-spacing:-.02em;line-height:.95;position:relative;z-index:2}
+.cta p{font-size:clamp(18px,1.6vw,22px);margin:28px auto 40px;max-width:560px;position:relative;z-index:2}
+.cta .contact-row{justify-content:center;position:relative;z-index:2}
+.cta .ring{position:absolute;border:2px solid rgba(255,255,255,.22);border-radius:50%;left:50%;top:50%;translate:-50% -50%;pointer-events:none}
+
+/* ---------- FOOTER ---------- */
+footer{padding:80px 5vw 30px;overflow:hidden}
+.foot-top{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;margin-bottom:60px}
+.foot-top .logo img{height:80px}
+.foot-top nav{display:flex;gap:26px;font-weight:500;flex-wrap:wrap}
+.foot-mark{font-family:var(--display);font-weight:700;font-size:clamp(56px,10vw,180px);letter-spacing:-.02em;line-height:.95;display:flex;flex-wrap:wrap;gap:0 .22em;justify-content:center;padding-bottom:.12em;overflow:hidden}
+.foot-mark span{display:inline-block}
+.foot-bottom{display:flex;justify-content:space-between;font-size:14px;color:#6e6585;margin-top:30px;flex-wrap:wrap;gap:10px;padding-right:80px}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ======== USTAW SWOJE DANE KONTAKTOWE TUTAJ ======== -->
+<script>
+  window.CONTACT = {
+    whatsapp: "48724504774",                      // numer z kierunkowym, bez + i spacji, np. 48601234567
+    whatsappText: "Dzień dobry! Chciał(a)bym zapytać o zajęcia jogi dla dzieci.",
+    whatsappTextCoop: "Dzień dobry! Piszę w sprawie współpracy z Active Kids Zone. Reprezentuję ośrodek / szkołę / przedszkole i chciał(a)bym porozmawiać o zajęciach dla dzieci.", // wiadomość z sekcji Współpraca
+    facebook: "https://www.facebook.com/ActiveKidsZoneKrakow", // pełny adres Twojej strony na Facebooku
+    instagram: "https://www.instagram.com/active.kids.zone_krakow/" // pełny adres Twojego profilu na Instagramie
+  };
+</script>
+
+<div class="loader" id="loader">
+  <div class="loader-word" aria-hidden="true"></div>
+  <div class="loader-count" id="loaderCount">0%</div>
+</div>
+<div class="cursor" id="cursor"></div>
+<div class="progress" id="progress"></div>
+
+<!-- ikony -->
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38A5.88 5.88 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.38.66-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.13A5.88 5.88 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 48 48"><path fill="currentColor" d="M24 3l5.5 15.5L45 24l-15.5 5.5L24 45l-5.5-15.5L3 24l15.5-5.5z"/></symbol>
+  <symbol id="ic-sun" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><circle cx="24" cy="24" r="9" fill="currentColor"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M9.9 9.9l4.2 4.2M33.9 33.9l4.2 4.2M9.9 38.1l4.2-4.2M33.9 14.1l4.2-4.2"/></g></symbol>
+  <symbol id="ic-heart" viewBox="0 0 48 48"><path fill="currentColor" d="M24 42S5 30.5 5 17.5C5 11 10 6.5 15.7 6.5c3.7 0 6.7 2 8.3 4.8 1.6-2.8 4.6-4.8 8.3-4.8C38 6.5 43 11 43 17.5 43 30.5 24 42 24 42z"/></symbol>
+  <symbol id="ic-flower" viewBox="0 0 48 48"><g fill="currentColor"><circle cx="24" cy="12" r="8"/><circle cx="35.4" cy="20.3" r="8"/><circle cx="31" cy="33.7" r="8"/><circle cx="17" cy="33.7" r="8"/><circle cx="12.6" cy="20.3" r="8"/></g><circle cx="24" cy="24" r="6" fill="#fff"/></symbol>
+  <symbol id="ic-cloud" viewBox="0 0 48 48"><path fill="currentColor" d="M14 38a10 10 0 0 1-1.3-19.9A12 12 0 0 1 36 16.5 9 9 0 0 1 36 38z"/></symbol>
+  <symbol id="ic-moon" viewBox="0 0 48 48"><path fill="currentColor" d="M30 5a19 19 0 1 0 13 30A16 16 0 0 1 30 5z"/></symbol>
+  <symbol id="ic-paw" viewBox="0 0 48 48"><g fill="currentColor"><ellipse cx="24" cy="32" rx="10" ry="8.5"/><ellipse cx="12" cy="20" rx="4.5" ry="6"/><ellipse cx="20" cy="12" rx="4.5" ry="6"/><ellipse cx="28" cy="12" rx="4.5" ry="6"/><ellipse cx="36" cy="20" rx="4.5" ry="6"/></g></symbol>
+  <symbol id="ic-body" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="9" r="5" fill="currentColor"/><path d="M8 18l16 4 16-4M24 22v10M24 32l-9 11M24 32l9 11"/></g></symbol>
+  <symbol id="ic-wind" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><path d="M5 18h24a6 6 0 1 0-6-6"/><path d="M5 27h32a6 6 0 1 1-6 6"/><path d="M5 36h14"/></g></symbol>
+  <symbol id="ic-book" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"><path d="M24 12c-5-4-12-4-18-2v28c6-2 13-2 18 2 5-4 12-4 18-2V10c-6-2-13-2-18 2z"/><path d="M24 12v28"/></g></symbol>
+  <symbol id="ic-link" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3.5"><circle cx="17" cy="24" r="11"/><circle cx="31" cy="24" r="11"/></g></symbol>
+  <symbol id="ic-leaf" viewBox="0 0 48 48"><path fill="currentColor" d="M41 7C20 7 7 17 7 32c0 3 .7 6 2 8.5C13 30 20 23 30 19c-9 5-15 12-18 22 2.5 1.3 5 1.8 8 1.8C35 42.8 41 28 41 7z"/></symbol>
+  <symbol id="ic-balance" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6v34M14 42h20M8 13h32"/><path d="M8 13l-5 13a5 5 0 0 0 10 0zM40 13l-5 13a5 5 0 0 0 10 0z"/></g></symbol>
+  <symbol id="ic-balloon" viewBox="0 0 48 48"><ellipse cx="24" cy="19" rx="13" ry="15" fill="currentColor"/><path d="M24 34l-3 4h6zM24 38c-3 3 3 5 0 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+  <symbol id="ic-eye" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-width="3.5" d="M3 24s8-13 21-13 21 13 21 13-8 13-21 13S3 24 3 24z"/><circle cx="24" cy="24" r="6" fill="currentColor"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <a href="#top" class="logo" aria-label="Active Kids Zone"><img src="img/logo.webp" alt="Active Kids Zone"></a>
+  <nav class="nav-links">
+    <a href="#zajecia">Zajęcia</a>
+    <a href="#dla-kogo">Dla kogo</a>
+    <a href="#urodziny">Urodziny</a>
+    <a href="#wspolpraca">Współpraca</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+  <a href="#" class="btn small magnetic js-wa" data-cursor target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Napisz</a>
+</header>
+<a href="#" class="wa-float js-wa" target="_blank" rel="noopener" aria-label="Napisz na WhatsApp" data-cursor><svg><use href="#i-wa"/></svg></a>
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="shape blob s1" data-speed="-0.25" data-mouse="30"></div>
+  <div class="shape blob s2" data-speed="0.3" data-mouse="-40"></div>
+  <div class="shape blob s3" data-speed="-0.15" data-mouse="20"></div>
+  <svg class="shape s4" width="80" height="80" viewBox="0 0 100 100" data-speed="0.4" data-mouse="-25"><path d="M50 0l12 38 38 12-38 12-12 38-12-38L0 50l38-12z" fill="#E8604C"/></svg>
+
+  <div class="hero-copy">
+    <h1 data-split><span class="hl">Wielka frajda</span> z&nbsp;ruchu. <span class="sub">Małe kroki do wielkiej pewności siebie.</span></h1>
+    <p class="lead hero-fade">Gimnastyka, joga i nauka pływania w Krakowie — zajęcia, na których dzieci odkrywają swoje możliwości, nabierają odwagi i czerpią radość z ruchu. Każde w swoim tempie, z miejscem także dla tych nieśmiałych.</p>
+    <div class="contact-row hero-fade">
+      <a href="#" class="btn wa magnetic js-wa" data-cursor target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Napisz na WhatsApp</a>
+      <a href="https://www.facebook.com/ActiveKidsZoneKrakow" class="btn fb magnetic js-fb" data-cursor target="_blank" rel="noopener"><svg><use href="#i-fb"/></svg>Facebook</a>
+      <a href="https://www.instagram.com/active.kids.zone_krakow/" class="btn ig magnetic js-ig" data-cursor target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Instagram</a>
+    </div>
+  </div>
+
+  <div class="collage" id="collage">
+    <div class="photo ph1" data-mouse="-12"><img src="img/pozycja-dziecka.webp" srcset="img/pozycja-dziecka-480.webp 480w, img/pozycja-dziecka-800.webp 800w, img/pozycja-dziecka.webp 1300w" sizes="(max-width:900px) 75vw, 39vw" fetchpriority="high" alt="Dzieci w pozycji dziecka w kręgu wokół mandali"></div>
+    <div class="photo ph2" data-mouse="16"><img src="img/balans-sciana.webp" srcset="img/balans-sciana-480.webp 480w, img/balans-sciana-800.webp 800w, img/balans-sciana.webp 975w" sizes="(max-width:900px) 35vw, 19vw" alt="Uśmiechnięta dziewczynka w pozycji balansowej przy ścianie"></div>
+    <div class="photo ph3" data-mouse="10"><img src="img/pool-party.webp" alt="Impreza na basenie"></div>
+    <div class="badge-float bf1" data-mouse="22"><i style="background:var(--main)"></i>Joga dla dzieci</div>
+    <div class="badge-float bf2" data-mouse="-18"><i style="background:var(--mint)"></i>We własnym tempie</div>
+  </div>
+</section>
+
+<!-- BIG QUOTE -->
+<section class="statement" id="statement">
+  <div class="sticker st1" data-speed="-0.5"><svg><use href="#ic-heart"/></svg></div>
+  <div class="sticker st2" data-speed="0.35"><svg><use href="#ic-flower"/></svg></div>
+  <div class="sticker st3" data-speed="0.55"><svg><use href="#ic-star"/></svg></div>
+  <div class="sticker st4" data-speed="-0.3"><svg><use href="#ic-sun"/></svg></div>
+  <h2 id="bigText">Mała mata. <span class="hl">Wielka odwaga</span> do bycia sobą </h2>
+  <span class="welcome reveal-up">satysfakcja, którą może poczuć każde dziecko</span>
+</section>
+
+
+
+<!-- ZAJĘCIA (horizontal) -->
+<section class="horiz" id="zajecia">
+  <div class="horiz-inner">
+    <div class="horiz-head">
+      <h2 data-split>Joga dla dzieci to <em>przygoda</em></h2>
+      <p class="reveal-up">Pełna ruchu, śmiechu i wyobraźni. Przy okazji ćwiczymy równowagę, koncentrację i współpracę.</p>
+    </div>
+    <div class="track" id="track">
+      <article class="fcard" style="background:var(--sun)">
+        <span class="num">01</span><span class="emo"><svg><use href="#ic-paw"/></svg></span>
+        <div><h4>Zamieniamy się w zwierzęta</h4><p>Lew, kot, żabka i motyl. Każda pozycja to mała opowieść.</p></div>
+      </article>
+      <div class="pcard"><img loading="lazy" src="img/krag-instruktorka.webp" srcset="img/krag-instruktorka-480.webp 480w, img/krag-instruktorka-800.webp 800w, img/krag-instruktorka.webp 975w" sizes="(max-width:500px) 90vw, 420px" alt="Dzieci z instruktorką w kręgu na poduszkach"></div>
+      <article class="fcard" style="background:#CFE9F4">
+        <span class="num">02</span><span class="emo"><svg><use href="#ic-body"/></svg></span>
+        <div><h4>Poznajemy możliwości swojego ciała</h4><p>Ruch, który daje radość, a nie poczucie, że trzeba coś udowodnić.</p></div>
+      </article>
+      <article class="fcard" style="background:var(--mint)">
+        <span class="num">03</span><span class="emo"><svg><use href="#ic-wind"/></svg></span>
+        <div><h4>Bawimy się oddechem</h4><p>Dmuchamy piórka, gasimy świeczki, uspokajamy się razem.</p></div>
+      </article>
+      <div class="pcard"><img loading="lazy" src="img/relaks-maty.webp" srcset="img/relaks-maty-480.webp 480w, img/relaks-maty-800.webp 800w, img/relaks-maty.webp 975w" sizes="(max-width:500px) 90vw, 420px" alt="Relaks na matach z opaskami na oczach"></div>
+      <article class="fcard" style="background:var(--pink)">
+        <span class="num">04</span><span class="emo"><svg><use href="#ic-book"/></svg></span>
+        <div><h4>Odpoczywamy przy opowieściach</h4><p>Relaks na koniec zajęć, kiedy ciało i głowa mogą odpocząć.</p></div>
+      </article>
+      <div class="pcard"><img loading="lazy" src="img/maski-krowka.webp" srcset="img/maski-krowka-480.webp 480w, img/maski-krowka-800.webp 800w, img/maski-krowka.webp 975w" sizes="(max-width:500px) 90vw, 420px" alt="Dziewczynki w opaskach-zwierzątkach z pluszową krówką"></div>
+      <article class="fcard" style="background:#fff">
+        <span class="num">05</span><span class="emo"><svg><use href="#ic-link"/></svg></span>
+        <div><h4>Równowaga, koncentracja, współpraca</h4><p>Ćwiczymy je przy okazji wspólnej zabawy.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- DLA KOGO -->
+<section class="mission" id="dla-kogo">
+  <div class="mission-bg" id="missionBg"></div>
+  <div class="mission-content">
+    <div class="kicker reveal-up">Dla kogo</div>
+    <h2 data-split>Idealne miejsce zarówno dla dzieci energicznych, jak i nieśmiałych.</h2>
+    <p class="reveal-up"> Dla tych, które potrzebują więcej czasu, by dołączyć, odezwać się i poczuć swobodnie w grupie, jak i dla tych, które mają mnóstwo energii, ciekawości świata i chęci do działania. </p>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<section class="marquee" aria-label="Co dzieje się na zajęciach">
+  <div class="mq-row" data-dir="1">
+    <div class="tile"><span class="emo" style="background:#FCE6B5"><svg><use href="#ic-body"/></svg></span><b>Ruch</b></div>
+    <div class="tile"><span class="emo" style="background:#D8F2E6"><svg><use href="#ic-sun"/></svg></span><b>Śmiech</b></div>
+    <div class="tile"><span class="emo" style="background:#E9E1FA"><svg><use href="#ic-cloud"/></svg></span><b>Wyobraźnia</b></div>
+    <div class="tile"><span class="emo" style="background:#CFE9F4"><svg><use href="#ic-wind"/></svg></span><b>Oddech</b></div>
+    <div class="tile"><span class="emo" style="background:#FFE0E8"><svg><use href="#ic-balance"/></svg></span><b>Równowaga</b></div>
+    <div class="tile"><span class="emo" style="background:#FCE6B5"><svg><use href="#ic-eye"/></svg></span><b>Koncentracja</b></div>
+    <div class="tile"><span class="emo" style="background:#D8F2E6"><svg><use href="#ic-link"/></svg></span><b>Współpraca</b></div>
+  </div>
+  <div class="mq-row" data-dir="-1">
+    <div class="tile"><span class="emo" style="background:#E9E1FA"><svg><use href="#ic-moon"/></svg></span><b>Relaks</b></div>
+    <div class="tile"><span class="emo" style="background:#FFE0E8"><svg><use href="#ic-leaf"/></svg></span><b>Własne tempo</b></div>
+    <div class="tile"><span class="emo" style="background:#CFE9F4"><svg><use href="#ic-eye"/></svg></span><b>Najpierw popatrzeć</b></div>
+    <div class="tile"><span class="emo" style="background:#FCE6B5"><svg><use href="#ic-star"/></svg></span><b>Małe sukcesy</b></div>
+    <div class="tile"><span class="emo" style="background:#D8F2E6"><svg><use href="#ic-heart"/></svg></span><b>Bycie sobą</b></div>
+    <div class="tile"><span class="emo" style="background:#E9E1FA"><svg><use href="#ic-flower"/></svg></span><b>Odwaga</b></div>
+    <div class="tile"><span class="emo" style="background:#FFE0E8"><svg><use href="#ic-paw"/></svg></span><b>Przyjaciele</b></div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="o-zajeciach">
+  <div class="story-visual" id="storyVisual">
+    <div class="layer l1" data-layer="0.12"><video data-src="video/video.mp4" poster="img/joga-krag-800.webp" muted loop playsinline preload="none" aria-label="Dzieci podczas zajęć"></video></div>
+    <div class="layer l2" data-layer="-0.25"><img src="img/rekodzielo.webp" srcset="img/rekodzielo-480.webp 480w, img/rekodzielo-800.webp 800w, img/rekodzielo.webp 1300w" sizes="(max-width:900px) 48vw, 23vw" loading="lazy" alt="Uśmiechnięte dziewczynki przy kolorowej pracy plastycznej"></div>
+    <div class="layer l3" data-layer="0.4"><svg><use href="#ic-sun"/></svg></div>
+  </div>
+  <div class="story-copy">
+    <div class="kicker reveal-up">Bez presji</div>
+    <h2 data-split>Tutaj można najpierw popatrzeć.</h2>
+    <p class="reveal-up">Spróbować wtedy, kiedy jest się gotowym. Bez rywalizacji, porównywania i presji, żeby od razu wszystko umieć. Wspólna zabawa daje okazję do nawiązywania kontaktu, a małe sukcesy pomagają budować wiarę we własne możliwości.</p>
+    <p class="reveal-up">Dzieci pełne energii znajdą tu radość ruchu, a te ostrożniejsze — przestrzeń do próbowania we własnym tempie.</p>
+    <!-- <blockquote class="reveal-up">Każde może poczuć satysfakcję: „Zrobiłem to po swojemu. I to się liczy!”</blockquote> -->
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="value reveal-card" style="background:var(--mint)"><span class="ico"><svg><use href="#ic-link"/></svg></span><div><div class="big">Bez rywalizacji</div><p>Nikt tu nie wygrywa i nikt nie przegrywa. Liczy się wspólna zabawa.</p></div></div>
+  <div class="value reveal-card" style="background:var(--pink)"><span class="ico"><svg><use href="#ic-balance"/></svg></span><div><div class="big">Bez porównywania</div><p>Każde dziecko robi to po swojemu i to jest w porządku.</p></div></div>
+  <div class="value reveal-card" style="background:#CFE9F4"><span class="ico"><svg><use href="#ic-balloon"/></svg></span><div><div class="big">Bez presji</div><p>Nie trzeba od razu wszystkiego umieć. Można spróbować, kiedy jest się gotowym.</p></div></div>
+</section>
+
+<!-- PARTY -->
+<section class="party" id="urodziny">
+  <div class="party-grid">
+  <div class="party-side">
+    <div class="kicker reveal-up">Urodziny dla dzieci · Kraków</div>
+    <h2 data-split>Urodziny na basenie w Krakowie</h2>
+    <p class="reveal-up">Urodziny dla dzieci z zabawami w wodzie, jacuzzi i salą urodzinową. Całość trwa około 2,5 godziny, łącznie z przebieraniem i suszeniem dzieci.</p>
+    <div class="party-time reveal-up"><span class="n">2,5 h</span><span>zabawy<br>i opieki</span></div>
+    <div class="party-photo"><img src="img/syrenki-grupa.webp" srcset="img/syrenki-grupa-480.webp 480w, img/syrenki-grupa-800.webp 800w, img/syrenki-grupa.webp 1300w" sizes="(max-width:900px) 155vw, 45vw" loading="lazy" alt="Dzieci w strojach syrenek w basenie"></div>
+  </div>
+  <div class="party-steps">
+    <div class="pline"><i></i></div>
+      <article class="pstep"><div class="pnum">1</div><div><h4>Zbiórka i przygotowanie</h4><p>Miejsce zbiórki znajduje się w ośrodku sportowym JJ Sport Concept w Krakowie w Skotnikach (Ul.&nbsp;Winnicka&nbsp;40). Recepcja kieruje dzieci na miejsce zbiórki na sofach przy szybie basenowej. Instruktorzy odbierają dzieci, razem idą do szatni i pomagają przygotować się do wejścia na basen.</p></div></article>
+      <article class="pstep"><div class="pnum">2</div><div><h4>Część basenowa <span class="ptag">60 min</span></h4><p>Około 50 minut zabaw i animacji wodnych z instruktorami, w tym zjeżdżalnia, a potem około 10 minut w jacuzzi z kolorowymi światłami. Opieka instruktorów i nadzór ratownika.</p><div class="pthumbs"><div class="pthumb"><img src="img/basen-instruktorzy.webp" alt="Zabawy w wodzie z instruktorkami" loading="lazy"></div><div class="pthumb"><img src="img/kolo-zolw.webp" alt="Roześmiana dziewczynka z dmuchanym żółwiem" loading="lazy"></div><div class="pthumb"><img src="img/jacuzzi.webp" alt="Dzieci w jacuzzi z kolorowymi światłami" loading="lazy"></div></div></div></article>
+      <article class="pstep"><div class="pnum">3</div><div><h4>Po basenie</h4><p>Dzieci wracają do szatni, przebierają się i suszą. Instruktorzy pomagają przy przebieraniu i suszeniu włosów.</p></div></article>
+      <article class="pstep"><div class="pnum">4</div><div><h4>Sala urodzinowa <span class="ptag">60 min</span></h4><p>W zależności od pakietu: poczęstunek, muzyka, kolorowe światła, ozdoby, zabawy oraz piniata.</p><div class="pthumbs"><div class="pthumb"><img src="img/okulary.webp" srcset="img/okulary-480.webp 480w, img/okulary-800.webp 800w, img/okulary.webp 1300w" sizes="(max-width:900px) 26vw, 24vw" alt="Dziewczynki w imprezowych okularach" loading="lazy"></div><div class="pthumb"><img src="img/tort-stol.webp" alt="Stół urodzinowy z przekąskami" loading="lazy"></div><div class="pthumb"><img src="img/poczestunek.webp" alt="Poczęstunek przy szybie basenowej" loading="lazy"></div></div></div></article>
+      <article class="pstep"><div class="pnum">5</div><div><h4>Tort</h4><p>Tort przygotowujecie we własnym zakresie. Po przywiezieniu możemy przechować go w lodówce do czasu podania.</p><div class="pthumbs"><div class="pthumb"><img src="img/tort-fontanna.webp" srcset="img/tort-fontanna-480.webp 480w, img/tort-fontanna-800.webp 800w, img/tort-fontanna.webp 923w" sizes="(max-width:900px) 26vw, 24vw" alt="Tort z zimnym ogniem" loading="lazy"></div></div></div></article>
+      <article class="pstep"><div class="pnum">6</div><div><h4>Rodzice i odbiór dzieci</h4><p>Rodzice mogą mieć czas wolny albo usiąść na sofach przed szybą basenową. Prosimy o punktualny odbiór dzieci po zakończeniu imprezy.</p></div></article>
+  </div>
+  </div>
+  <div class="party-note">
+    <h3 data-split>Ważne przed imprezą</h3>
+    <ul>
+      <li class="note-item"><svg><use href="#ic-check"/></svg><span>Każde dziecko powinno mieć strój kąpielowy, ręcznik i czepek (czepek można wypożyczyć na miejscu).</span></li>
+      <li class="note-item"><svg><use href="#ic-check"/></svg><span>Prosimy o punktualne przybycie, aby cała grupa mogła rozpocząć zabawę razem.</span></li>
+      <li class="note-item"><svg><use href="#ic-check"/></svg><span>W razie pytań zadzwoń przed terminem imprezy.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- WSPÓŁPRACA -->
+<section class="coop" id="wspolpraca">
+  <div class="coop-head">
+    <div>
+      <div class="kicker reveal-up">Współpraca</div>
+      <h2 data-split>Razem możemy dać dzieciom jeszcze więcej ruchu.</h2>
+    </div>
+    <p class="reveal-up">Od wielu lat współpracujemy z ośrodkami sportowymi, basenami i centrami rekreacji, prowadząc zajęcia i imprezy dla dzieci. Chętnie nawiążemy kolejne współprace, także ze szkołami i przedszkolami.</p>
+  </div>
+  <div class="coop-cards">
+    <article class="coop-card reveal-up"><span class="ico" style="background:#CFE9F4"><svg><use href="#ic-wind"/></svg></span><h3>Ośrodki i baseny</h3><p>Prowadzimy regularne zajęcia, naukę pływania i urodziny na Waszym obiekcie. Uzupełniamy ofertę dla rodzin z dziećmi.</p></article>
+    <article class="coop-card reveal-up"><span class="ico" style="background:#FCE6B5"><svg><use href="#ic-book"/></svg></span><h3>Szkoły</h3><p>Zajęcia ruchowe i joga dla klas, warsztaty wyciszające, zajęcia pozalekcyjne oraz wydarzenia na dzień sportu czy Dzień Dziecka.</p></article>
+    <article class="coop-card reveal-up"><span class="ico" style="background:#FFE0E8"><svg><use href="#ic-paw"/></svg></span><h3>Przedszkola</h3><p>Gimnastyka i joga przez zabawę, dopasowane do wieku i możliwości grupy. Przyjeżdżamy na miejsce z własnym sprzętem.</p></article>
+  </div>
+  <div class="coop-cta reveal-up">
+    <p>Prowadzisz ośrodek, szkołę albo przedszkole? Napisz do nas, a przygotujemy propozycję dopasowaną do Waszych potrzeb.</p>
+    <a href="#" class="btn light magnetic js-wa" data-wa-text="whatsappTextCoop" data-cursor target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Porozmawiajmy o współpracy</a>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="galeria">
+  <div class="gallery-head">
+    <div class="kicker reveal-up">Galeria</div>
+    <h2 data-split>Z naszych zajęć i urodzin</h2>
+  </div>
+  <div class="g-cols">
+    <div class="g-col" data-col="0.08">
+      <div class="g-item tall"><img src="img/syrenka.webp" srcset="img/syrenka-480.webp 480w, img/syrenka-800.webp 800w, img/syrenka.webp 975w" sizes="(max-width:760px) 45vw, 30vw" alt="Dziewczynka w stroju syrenki" loading="lazy"></div>
+      <div class="g-item tall"><img src="img/basen-kolo.webp" srcset="img/basen-kolo-480.webp 480w, img/basen-kolo-800.webp 800w, img/basen-kolo.webp 1050w" sizes="(max-width:760px) 45vw, 30vw" alt="Uśmiechnięta dziewczynka w kole na basenie" loading="lazy"></div>
+      <div class="g-item tall"><img src="img/balans-sciana.webp" srcset="img/balans-sciana-480.webp 480w, img/balans-sciana-800.webp 800w, img/balans-sciana.webp 975w" sizes="(max-width:760px) 45vw, 30vw" alt="Pozycja balansowa przy ścianie" loading="lazy"></div>
+      <div class="g-item tall"><img src="img/basen-pilki.webp" srcset="img/basen-pilki-480.webp 480w, img/basen-pilki-800.webp 800w, img/basen-pilki.webp 867w" sizes="(max-width:760px) 45vw, 30vw" alt="Zabawa z piłeczkami w wodzie" loading="lazy"></div>
+    </div>
+    <div class="g-col" data-col="-0.12">
+      <div class="g-item tall"><img src="img/relaks-maty.webp" srcset="img/relaks-maty-480.webp 480w, img/relaks-maty-800.webp 800w, img/relaks-maty.webp 975w" sizes="(max-width:760px) 45vw, 30vw" alt="Relaks na matach" loading="lazy"></div>
+      <div class="g-item wide"><img src="img/okulary.webp" srcset="img/okulary-480.webp 480w, img/okulary-800.webp 800w, img/okulary.webp 1300w" sizes="(max-width:760px) 45vw, 30vw" alt="Imprezowe okulary" loading="lazy"></div>
+      <div class="g-item tall"><img src="img/krowka.webp" srcset="img/krowka-480.webp 480w, img/krowka-800.webp 800w, img/krowka.webp 1047w" sizes="(max-width:760px) 45vw, 30vw" alt="Pluszowa krówka" loading="lazy"></div>
+      <div class="g-item wide"><img src="img/basen-grupa.webp" srcset="img/basen-grupa-480.webp 480w, img/basen-grupa-800.webp 800w, img/basen-grupa.webp 1400w" sizes="(max-width:760px) 45vw, 30vw" alt="Grupa dzieci przy basenie" loading="lazy"></div>
+    </div>
+    <div class="g-col" data-col="0.16">
+      <div class="g-item wide"><img src="img/rekodzielo.webp" srcset="img/rekodzielo-480.webp 480w, img/rekodzielo-800.webp 800w, img/rekodzielo.webp 1300w" sizes="(max-width:760px) 45vw, 30vw" alt="Kolorowa praca plastyczna" loading="lazy"></div>
+      <div class="g-item tall"><img src="img/tort-fontanna.webp" srcset="img/tort-fontanna-480.webp 480w, img/tort-fontanna-800.webp 800w, img/tort-fontanna.webp 923w" sizes="(max-width:760px) 45vw, 30vw" alt="Tort urodzinowy" loading="lazy"></div>
+      <div class="g-item tall"><img src="img/basen-pokoj.webp" srcset="img/basen-pokoj-480.webp 480w, img/basen-pokoj-800.webp 800w, img/basen-pokoj.webp 1050w" sizes="(max-width:760px) 45vw, 30vw" alt="Zabawa z piłeczkami w basenie" loading="lazy"></div>
+      <div class="g-item tall"><img src="img/banka.webp" srcset="img/banka-480.webp 480w, img/banka-800.webp 800w, img/banka.webp 1050w" sizes="(max-width:760px) 45vw, 30vw" alt="Dziewczynka w wodnej bańce" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="kontakt">
+  <div class="ring" style="width:60vw;height:60vw"></div>
+  <div class="ring" style="width:90vw;height:90vw"></div>
+  <div class="ring" style="width:120vw;height:120vw"></div>
+  <h2 data-split>Zapraszam na zajęcia</h2>
+  <p class="reveal-up">na których rośnie nie tylko sprawność, ale też odwaga do bycia sobą. Napisz, a odpowiem na wszystkie pytania.</p>
+  <div class="contact-row reveal-up">
+    <a href="#" class="btn wa magnetic js-wa" data-cursor target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Napisz na WhatsApp</a>
+    <a href="https://www.facebook.com/ActiveKidsZoneKrakow" class="btn light magnetic js-fb" data-cursor target="_blank" rel="noopener"><svg><use href="#i-fb"/></svg>Odwiedź nas na Facebooku</a>
+    <a href="https://www.instagram.com/active.kids.zone_krakow/" class="btn ig magnetic js-ig" data-cursor target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Obserwuj na Instagramie</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-top">
+    <a href="#top" class="logo"><img src="img/logo.webp" alt="Active Kids Zone"></a>
+    <nav>
+      <a href="#zajecia">Zajęcia</a>
+      <a href="#dla-kogo">Dla kogo</a>
+      <a href="#urodziny">Urodziny</a>
+      <a href="#wspolpraca">Współpraca</a>
+      <a href="#galeria">Galeria</a>
+    </nav>
+  </div>
+  <div class="foot-mark" id="footMark" aria-hidden="true"><span style="color:var(--red)">Active</span><span style="color:var(--sun)">Kids</span><span style="color:var(--sky)">Zone</span></div>
+  <div class="foot-bottom"><span>© 2026 Active Kids Zone</span><span>Joga dla dzieci · urodziny na basenie · Kraków</span></div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+  /* ---------- Contact links ---------- */
+  const C=window.CONTACT||{};
+  const waUrl=text=>'https://wa.me/'+String(C.whatsapp||'').replace(/\D/g,'')+(text?'?text='+encodeURIComponent(text):'');
+  document.querySelectorAll('.js-wa').forEach(a=>a.href=waUrl(C[a.dataset.waText]||C.whatsappText));
+  document.querySelectorAll('.js-fb').forEach(a=>a.href=C.facebook||'#');
+  document.querySelectorAll('.js-ig').forEach(a=>a.href=C.instagram||'#');
+
+  /* loader letters */
+  const lw=document.querySelector('.loader-word');
+  lw.innerHTML=[...'Active Kids Zone'].map(ch=>ch===' '?'<span>&nbsp;</span>':`<span>${ch}</span>`).join('');
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasGsap = typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined';
+  const loader = document.getElementById('loader');
+
+  if(!hasGsap || reduce){
+    loader.style.display='none';
+    document.querySelectorAll('.statement h2').forEach(e=>e.style.opacity=1);
+    document.getElementById('missionBg').style.clipPath='none';
+    document.querySelector('.wa-float').style.transform='scale(1)';
+    return;
+  }
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ---------- Smooth scroll ---------- */
+  let lenis=null;
+  if(typeof Lenis!=='undefined'){
+    lenis=new Lenis({duration:1.15,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t))});
+    lenis.on('scroll',ScrollTrigger.update);
+    gsap.ticker.add(t=>lenis.raf(t*1000));
+    gsap.ticker.lagSmoothing(0);
+    lenis.stop();
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    const id=a.getAttribute('href'); if(id.length<2) return;
+    a.addEventListener('click',e=>{
+      const el=document.querySelector(id); if(!el) return; e.preventDefault();
+      lenis?lenis.scrollTo(el,{offset:-20,duration:1.6}):el.scrollIntoView({behavior:'smooth'});
+    });
+  });
+
+  /* ---------- Split text ---------- */
+  function split(el){
+    const walk=node=>{
+      [...node.childNodes].forEach(ch=>{
+        if(ch.nodeType===3){
+          const frag=document.createDocumentFragment();
+          ch.textContent.split(/(\s+)/).forEach(part=>{
+            if(!part) return;
+            if(/^\s+$/.test(part)){frag.appendChild(document.createTextNode(' '));return;}
+            const w=document.createElement('span');w.className='word';
+            const i=document.createElement('span');i.className='word-inner';i.textContent=part;
+            w.appendChild(i);frag.appendChild(w);
+          });
+          ch.replaceWith(frag);
+        } else if(ch.nodeType===1) walk(ch);
+      });
+    };
+    walk(el); return el.querySelectorAll('.word-inner');
+  }
+  document.querySelectorAll('[data-split]').forEach(el=>{
+    const words=split(el); gsap.set(words,{yPercent:115,rotate:4}); el._words=words;
+  });
+  const big=document.getElementById('bigText');
+  big.innerHTML=big.textContent.split(' ').map(w=>`<span class="w">${w}</span>`).join(' ');
+
+  /* ---------- Initial states ---------- */
+  gsap.set('.hero-fade',{y:30,opacity:0});
+  gsap.set('.photo',{y:160,opacity:0,scale:.9});
+  gsap.set('.badge-float',{scale:0});
+  gsap.set('.hero .shape',{scale:0});
+  gsap.set('.nav',{yPercent:-200});
+
+  /* ---------- Loader → hero ---------- */
+  const count={v:0}, countEl=document.getElementById('loaderCount');
+  gsap.timeline()
+    .to('.loader-word span',{yPercent:-110,duration:.7,stagger:.035,ease:'back.out(2)'})
+    .to(count,{v:100,duration:1.1,ease:'power2.inOut',onUpdate:()=>countEl.textContent=Math.round(count.v)+'%'},0)
+    .to('.loader-word span',{y:-18,duration:.22,stagger:{each:.03,yoyo:true,repeat:1},ease:'power1.inOut'},'-=.3')
+    .to('.loader-word span',{yPercent:-240,duration:.5,stagger:.015,ease:'power3.in'},'+=.1')
+    .to(loader,{clipPath:'inset(0 0 100% 0)',duration:.9,ease:'expo.inOut'},'-=.2')
+    .set(loader,{display:'none'})
+    .add(()=>{lenis&&lenis.start();},'<')
+    .to('.nav',{yPercent:0,duration:.8,ease:'expo.out'},'-=.5')
+    .to('.hero h1 .word-inner',{yPercent:0,rotate:0,duration:1,stagger:.05,ease:'expo.out'},'-=.7')
+    .to('.hero-fade',{y:0,opacity:1,duration:.8,stagger:.1,ease:'power3.out'},'-=.8')
+    .to('.ph1',{y:0,opacity:1,scale:1,duration:1.2,ease:'expo.out'},'-=.9')
+    .to('.ph2,.ph3',{y:0,opacity:1,scale:1,duration:1.2,stagger:.1,ease:'expo.out'},'-=1.05')
+    .to('.photo img',{scale:1,duration:1.6,ease:'expo.out'},'<')
+    .to('.badge-float',{scale:1,duration:.8,stagger:.12,ease:'back.out(2.2)'},'-=1')
+    .to('.hero .shape',{scale:1,duration:1,stagger:.08,ease:'elastic.out(1,.5)'},'-=1')
+    .to('.wa-float',{scale:1,duration:.8,ease:'back.out(2)'},'-=.6');
+
+  /* ---------- Cursor ---------- */
+  const cursor=document.getElementById('cursor');
+  const qx=gsap.quickTo(cursor,'x',{duration:.25,ease:'power3'}),qy=gsap.quickTo(cursor,'y',{duration:.25,ease:'power3'});
+  window.addEventListener('mousemove',e=>{qx(e.clientX);qy(e.clientY);});
+  document.querySelectorAll('[data-cursor], .g-item').forEach(el=>{
+    el.addEventListener('mouseenter',()=>cursor.classList.add('big'));
+    el.addEventListener('mouseleave',()=>cursor.classList.remove('big'));
+  });
+
+  /* ---------- Magnetic ---------- */
+  if(matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.magnetic').forEach(el=>{
+      const xTo=gsap.quickTo(el,'x',{duration:.5,ease:'elastic.out(1,.4)'}),yTo=gsap.quickTo(el,'y',{duration:.5,ease:'elastic.out(1,.4)'});
+      el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect();xTo((e.clientX-r.left-r.width/2)*.3);yTo((e.clientY-r.top-r.height/2)*.3);});
+      el.addEventListener('mouseleave',()=>{xTo(0);yTo(0);});
+    });
+  }
+
+  /* ---------- Mouse parallax (hero) ---------- */
+  const hero=document.querySelector('.hero');
+  const mouseEls=[...hero.querySelectorAll('[data-mouse]')].map(el=>({amt:+el.dataset.mouse,x:gsap.quickTo(el,'x',{duration:1,ease:'power3'}),y:gsap.quickTo(el,'y',{duration:1,ease:'power3'})}));
+  hero.addEventListener('mousemove',e=>{
+    const nx=e.clientX/innerWidth-.5,ny=e.clientY/innerHeight-.5;
+    mouseEls.forEach(m=>{m.x(nx*m.amt);m.y(ny*m.amt);});
+  });
+
+  /* ---------- Nav + progress ---------- */
+  const nav=document.getElementById('nav');let lastY=0;
+  ScrollTrigger.create({start:0,end:'max',onUpdate:self=>{
+    const y=self.scroll(); nav.classList.toggle('hide',y>lastY&&y>300); lastY=y;
+    gsap.set('#progress',{scaleX:self.progress});
+  }});
+
+  /* ---------- Scroll parallax ---------- */
+  document.querySelectorAll('[data-speed]').forEach(el=>{
+    gsap.to(el,{yPercent:+el.dataset.speed*-200,ease:'none',scrollTrigger:{trigger:el.closest('section'),start:'top bottom',end:'bottom top',scrub:true}});
+  });
+  const heroST={trigger:'.hero',start:'top top',end:'bottom top',scrub:true};
+  gsap.to('.ph1',{yPercent:-12,ease:'none',scrollTrigger:heroST});
+  gsap.to('.ph2',{yPercent:-40,rotate:12,ease:'none',scrollTrigger:heroST});
+  gsap.to('.ph3',{yPercent:-20,rotate:-14,ease:'none',scrollTrigger:heroST});
+
+  /* ---------- Reveals ---------- */
+  document.querySelectorAll('[data-split]').forEach(el=>{
+    if(el.closest('.hero')) return;
+    gsap.to(el._words,{yPercent:0,rotate:0,duration:1,stagger:.05,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 85%'}});
+  });
+  gsap.utils.toArray('.reveal-up').forEach(el=>gsap.from(el,{y:50,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%'}}));
+
+  /* ---------- Big quote ---------- */
+  gsap.to('#bigText .w',{opacity:1,stagger:.1,ease:'none',scrollTrigger:{trigger:'#bigText',start:'top 80%',end:'bottom 45%',scrub:true}});
+  gsap.from('.sticker',{scale:0,rotate:-40,duration:1,stagger:.12,ease:'back.out(2)',scrollTrigger:{trigger:'#statement',start:'top 70%'}});
+
+  /* ---------- Horizontal ---------- */
+  const mm=gsap.matchMedia();
+  mm.add('(min-width:761px)',()=>{
+    const track=document.getElementById('track');
+    const dist=()=>track.scrollWidth-(innerWidth-innerWidth*.05);
+    const tween=gsap.to(track,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:'.horiz',start:'top top',end:()=>'+='+dist(),pin:true,scrub:1,invalidateOnRefresh:true}});
+    gsap.utils.toArray('.fcard').forEach(card=>{
+      gsap.from(card,{y:120,rotate:6,ease:'none',scrollTrigger:{trigger:card,containerAnimation:tween,start:'left right',end:'left 60%',scrub:true}});
+      gsap.from(card.querySelector('.emo'),{rotate:-30,scale:.4,ease:'none',scrollTrigger:{trigger:card,containerAnimation:tween,start:'left right',end:'center center',scrub:true}});
+    });
+    gsap.utils.toArray('.pcard').forEach(card=>{
+      gsap.fromTo(card.querySelector('img'),{xPercent:-16},{xPercent:0,ease:'none',scrollTrigger:{trigger:card,containerAnimation:tween,start:'left right',end:'right left',scrub:true}});
+      gsap.from(card,{clipPath:'inset(30% 0 30% 0 round 28px)',ease:'none',scrollTrigger:{trigger:card,containerAnimation:tween,start:'left right',end:'left 55%',scrub:true}});
+    });
+  });
+  mm.add('(max-width:760px)',()=>{
+    gsap.utils.toArray('.fcard,.pcard').forEach(card=>gsap.from(card,{y:80,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:card,start:'top 88%'}}));
+  });
+
+  /* ---------- Circle reveal ---------- */
+  gsap.to('#missionBg',{clipPath:'circle(75% at 50% 50%)',ease:'none',scrollTrigger:{trigger:'#dla-kogo',start:'top 75%',end:'center center',scrub:true}});
+
+  /* ---------- Marquee ---------- */
+  const rows=[...document.querySelectorAll('.mq-row')].map(row=>{row.innerHTML+=row.innerHTML;return{row,dir:+row.dataset.dir,x:0};});
+  let boost=0;
+  ScrollTrigger.create({start:0,end:'max',onUpdate:self=>{boost=gsap.utils.clamp(-12,12,self.getVelocity()/250);}});
+  gsap.ticker.add((t,dt)=>{
+    boost*=.93;
+    rows.forEach(r=>{
+      const half=r.row.scrollWidth/2;
+      r.x-=r.dir*(0.06*dt+Math.abs(boost));
+      if(r.x<=-half)r.x+=half; if(r.x>0)r.x-=half;
+      r.row.style.transform=`translate3d(${r.x}px,0,0)`;
+    });
+  });
+  rows[1].x=-rows[1].row.scrollWidth/2;
+
+  /* ---------- Story video (lazy) ---------- */
+  document.querySelectorAll('video[data-src]').forEach(v=>{
+    const load=()=>{v.src=v.dataset.src;v.removeAttribute('data-src');v.play().catch(()=>{});};
+    if(!('IntersectionObserver' in window)) return load();
+    const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){io.disconnect();load();}},{rootMargin:'400px 0px'});
+    io.observe(v);
+  });
+
+  /* ---------- Story layers ---------- */
+  document.querySelectorAll('[data-layer]').forEach(el=>{
+    const s=+el.dataset.layer;
+    gsap.fromTo(el,{yPercent:s*60},{yPercent:s*-60,ease:'none',scrollTrigger:{trigger:'#storyVisual',start:'top bottom',end:'bottom top',scrub:true}});
+  });
+  gsap.from('.l1',{clipPath:'inset(100% 0 0 0 round 28px)',duration:1.4,ease:'expo.inOut',scrollTrigger:{trigger:'#storyVisual',start:'top 80%'}});
+  gsap.from('.l1 video',{scale:1.3,duration:1.8,ease:'expo.out',scrollTrigger:{trigger:'#storyVisual',start:'top 80%'}});
+  gsap.from('.l2,.l3',{scale:0,duration:1,stagger:.15,ease:'back.out(1.8)',scrollTrigger:{trigger:'#storyVisual',start:'top 60%'}});
+
+  /* ---------- Values ---------- */
+  gsap.from('.reveal-card',{y:100,rotate:()=>gsap.utils.random(-6,6),opacity:0,duration:1,stagger:.12,ease:'expo.out',scrollTrigger:{trigger:'.values',start:'top 80%'}});
+
+  /* ---------- Party timeline ---------- */
+  gsap.to('.pline i',{scaleY:1,ease:'none',scrollTrigger:{trigger:'.party-steps',start:'top 60%',end:'bottom 60%',scrub:true}});
+  gsap.utils.toArray('.pstep').forEach(step=>{
+    gsap.from(step,{x:80,opacity:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:step,start:'top 88%'}});
+    ScrollTrigger.create({trigger:step,start:'top 60%',onEnter:()=>step.classList.add('active'),onLeaveBack:()=>step.classList.remove('active')});
+  });
+  gsap.fromTo('.party-photo img',{yPercent:-12},{yPercent:0,ease:'none',scrollTrigger:{trigger:'.party',start:'top bottom',end:'bottom top',scrub:true}});
+  gsap.from('.party-photo',{clipPath:'inset(100% 0 0 0 round 28px)',duration:1.3,ease:'expo.inOut',scrollTrigger:{trigger:'.party-photo',start:'top 90%'}});
+  gsap.from('.party-note',{y:80,scale:.96,opacity:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:'.party-note',start:'top 85%'}});
+  gsap.from('.note-item',{x:-40,opacity:0,duration:.8,stagger:.12,ease:'power3.out',scrollTrigger:{trigger:'.party-note',start:'top 75%'}});
+
+  /* ---------- Gallery: column parallax + reveal ---------- */
+  document.querySelectorAll('.g-col').forEach(col=>{
+    const s=+col.dataset.col;
+    gsap.fromTo(col,{yPercent:s*100},{yPercent:-s*100,ease:'none',scrollTrigger:{trigger:'.g-cols',start:'top bottom',end:'bottom top',scrub:true}});
+  });
+  gsap.utils.toArray('.g-item').forEach(it=>{
+    gsap.from(it,{clipPath:'inset(100% 0 0 0 round 28px)',duration:1.3,ease:'expo.inOut',scrollTrigger:{trigger:it,start:'top 92%'}});
+    gsap.from(it.querySelector('img'),{scale:1.35,duration:1.8,ease:'expo.out',scrollTrigger:{trigger:it,start:'top 92%'}});
+  });
+
+  /* ---------- CTA ---------- */
+  gsap.from('.cta',{scale:.88,borderRadius:120,ease:'none',scrollTrigger:{trigger:'.cta',start:'top bottom',end:'top 30%',scrub:true}});
+  gsap.utils.toArray('.ring').forEach((r,i)=>gsap.to(r,{scale:1.3+i*.1,ease:'none',scrollTrigger:{trigger:'.cta',start:'top bottom',end:'bottom top',scrub:true}}));
+
+  /* ---------- Footer ---------- */
+  gsap.from('#footMark span',{yPercent:110,rotate:()=>gsap.utils.random(-12,12),duration:1.2,stagger:.1,ease:'expo.out',scrollTrigger:{trigger:'#footMark',start:'top 95%'}});
+
+  window.addEventListener('load',()=>ScrollTrigger.refresh());
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.active-kids-zone.pl/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <image:image><image:loc>https://www.active-kids-zone.pl/img/og-image.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.active-kids-zone.pl/img/joga-krag.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.active-kids-zone.pl/img/pozycja-dziecka.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.active-kids-zone.pl/img/syrenki-grupa.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.active-kids-zone.pl/img/basen-instruktorzy.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.active-kids-zone.pl/img/jacuzzi.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.active-kids-zone.pl/img/tort-fontanna.webp</image:loc></image:image>
+  </url>
+</urlset>
